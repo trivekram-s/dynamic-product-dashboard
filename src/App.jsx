@@ -1,7 +1,8 @@
-import ProductCatalog from "./components/ProductList";
+import React from "react";
+import ProductList from "./components/ProductList";
 
 function App() {
-  const inventoryItems = [
+  const inventoryData = [
     { id: 1, name: "Laptop", price: 50000, inStock: true },
     { id: 2, name: "Mouse", price: 1000, inStock: false },
     { id: 3, name: "Keyboard", price: 2500, inStock: true },
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       <h1>Product Dashboard</h1>
-      <ProductCatalog products={inventoryItems} />
+      <ProductList products={inventoryData} />
     </>
   );
 }

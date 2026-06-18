@@ -1,16 +1,20 @@
+import React from "react";
 import ProductCard from "./ProductCard";
 
 function ProductList({ products }) {
-  const stockedItems = products.filter(({ inStock }) => inStock);
+  const inStockItems = products.filter(({ inStock }) => inStock);
 
-  if (!stockedItems.length) {
+  if (inStockItems.length === 0) {
     return <p>No products in stock.</p>;
   }
 
   return (
     <main>
-      {products.map((item) => (
-        <ProductCard key={item.id} product={item} />
+      {products.map((itemDetails) => (
+        <ProductCard
+          key={itemDetails.id}
+          product={itemDetails}
+        />
       ))}
     </main>
   );
